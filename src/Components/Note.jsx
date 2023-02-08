@@ -17,19 +17,19 @@ function Note() {
   );
 
   return (
-    <div className="px-3 py-2 bg-rose-200 h-fit w-64 rounded shadow border flex-col flex content-between">
+    <div className=" px-3 py-2  bg-rose-200 rounded shadow border flex-col flex justify-between">
       <div className="top">
         <p id="title-note" className="border-black border-b-2 font-bold">
           title note
         </p>
-        <p id="note" className=" grow">
+        <p id="note" className=" grow text-sm">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo quidem
           adipisci atque at quam laudantium
         </p>
       </div>
-      <div className="bot flex flex-row justify-between items-center mt-2">
+      <div className="bot flex flex-row justify-between items-center">
         <p className="text-sm text-slate-600">28/12/2023</p>
-        <button className="p-1 rounded self-end justify-self-end hover:bg-rose-400 duration-300">
+        <button className="p-1 rounded-full self-end justify-self-end hover:bg-red-500 hover:text-white duration-300">
           {svg}
         </button>
       </div>

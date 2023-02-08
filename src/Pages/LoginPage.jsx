@@ -1,4 +1,6 @@
+import AddNote from "../Components/AddNote";
 import Login from "../Components/Login";
+import Logout from "../Components/Logout";
 import Note from "../Components/Note";
 import Register from "../Components/Register";
 
@@ -10,25 +12,22 @@ function LoginPage() {
     >
       {/* <Login /> */}
       {/* <Register /> */}
-      <div className="h-full grid grid-cols-4 grid-rows-4 gap-5  place-items-center  bg-rose-50">
+      {/* // ! PR */}
+      <div
+        id="notelist"
+        className="h-full  bg-rose-50 gap-y-4  justify-around  text-justify"
+      >
+        <Note />
+        <Note />
+        {/* <Note />
         <Note />
         <Note />
         <Note />
         <Note />
+        <Note /> */}
         <Note />
         <Note />
-        <Note />
-        <Note />
-        <Note />
-        <Note />
-        <Note />
-        <Note />
-        <Note />
-        <Note />
-        <Note />
-        <Note />
-        <Note />
-        <Note />
+        <AddNote />
       </div>
     </div>
   );
