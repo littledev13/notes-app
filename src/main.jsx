@@ -3,9 +3,10 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import "./index.css";
-import { app } from "./config/firebase";
+// import { app, writeDB } from "./config/firebase";
 
-console.log("firebase : ", app);
+// console.log("firebase : ", writeDB);
+// writeDB();
 
 const router = createBrowserRouter([
   {

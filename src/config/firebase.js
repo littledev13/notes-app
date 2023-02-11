@@ -1,7 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getDatabase, ref, set, push, onValue } from "firebase/database";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -16,5 +15,35 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const db = getDatabase();
+const dbRef = ref(db, "users");
 
-export { app };
+const writeDB = () => {
+  // set(push(ref(db, "users/")), {
+  //   username: "aldo",
+  //   email: "azwardi",
+  //   profile_picture: "imageUrl",
+  // });
+  readDB();
+  alert("work ");
+};
+
+const readDB = () => {
+  onValue(
+    dbRef,
+    (snapshot) => {
+      snapshot.forEach((childSnapshot) => {
+        const childKey = childSnapshot.key;
+        const childData = childSnapshot.val();
+        // ...
+        console.log("key : ", childSnapshot);
+        // console.log("Data : ", childData);
+      });
+    },
+    {
+      onlyOnce: true,
+    }
+  );
+};
+
+export { app, writeDB, readDB };

@@ -1,4 +1,6 @@
 import React from "react";
+// import { CRUD } from "../config/CRUD";
+import { writeDB } from "../config/firebase";
 
 function AddNote() {
   const svg = (
@@ -38,7 +40,10 @@ function AddNote() {
       </div>
       <div className="bot flex flex-row justify-between items-center ">
         <p className="text-sm text-slate-600">28/12/2023</p>
-        <button className="p-1 rounded-full self-end justify-self-end hover:bg-emerald-500 hover:text-white duration-300">
+        <button
+          className="p-1 rounded-full self-end justify-self-end hover:bg-emerald-500 hover:text-white duration-300"
+          onClick={writeDB}
+        >
           {svg}
         </button>
       </div>
