@@ -1,6 +1,19 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, set, push, onValue } from "firebase/database";
+import {
+  getDatabase,
+  ref,
+  set,
+  push,
+  get,
+  onValue,
+  query,
+  equalTo,
+  orderByChild,
+  child,
+  orderByValue,
+  limitToLast,
+} from "firebase/database";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -12,32 +25,43 @@ const firebaseConfig = {
   messagingSenderId: "418117400036",
   appId: "1:418117400036:web:f93e063f1ddd5b172fc3f1",
 };
+const tgl = new Date();
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase();
-const dbRef = ref(db, "users");
 
-const writeDB = () => {
-  // set(push(ref(db, "users/")), {
-  //   username: "aldo",
-  //   email: "azwardi",
-  //   profile_picture: "imageUrl",
-  // });
-  readDB();
-  alert("work ");
+const writeDB = ({ ...write }) => {
+  if (write.regis) {
+    const user = write.regis;
+    // set(push(ref(db, "users")), {
+    //   username: user.username,
+    //   email: user.email,
+    //   password: user.password,
+    //   registerAt: tgl.toLocaleDateString(),
+    // });
+
+    console.log("users this");
+  } else {
+    alert("wrong param");
+  }
 };
 
-const readDB = () => {
+const readDB = (params) => {
+  if (!params) {
+    return alert("not params");
+  }
   onValue(
-    dbRef,
+    ref(db, `${params}`),
     (snapshot) => {
       snapshot.forEach((childSnapshot) => {
         const childKey = childSnapshot.key;
         const childData = childSnapshot.val();
-        // ...
-        console.log("key : ", childSnapshot);
-        // console.log("Data : ", childData);
+        if (childData.username == "aldo") {
+          console.log(childData);
+          {
+          }
+        }
       });
     },
     {
@@ -46,4 +70,4 @@ const readDB = () => {
   );
 };
 
-export { app, writeDB, readDB };
+export { writeDB, readDB };

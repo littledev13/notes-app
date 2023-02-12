@@ -1,6 +1,6 @@
 # Notes App
 
-Aplikasi catatan
+Aplikasi catatan yang dibuat dengan teknologi ReactJS, Tailwind, tw-element, Redux, React Router Dom
 
 <!-- git commit -m "" -->
 
@@ -24,3 +24,8 @@ Aplikasi catatan
 - Save Chats
 - Delete Chats
 - Date at Saved
+
+### Ga tau apa namanya
+
+- user(username*, email*, password)
+- chats(note,title)

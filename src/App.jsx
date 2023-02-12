@@ -1,9 +1,13 @@
-import { Routes, Route } from "react-router-dom";
-import { Link } from "react-router-dom";
+// import { Routes, Route } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Logout from "./Components/Logout";
 import LoginPage from "./Pages/LoginPage";
+import { useSelector, useDispatch } from "react-redux";
+import { decrement, increment } from "./Store/counter/counter";
 
 function App() {
+  // const count = useSelector((state) => state.counter.value);
+  // const dispatch = useDispatch();
   return (
     <div className="App transition-all duration-150 w-screen h-screen bg-slate-300 grid place-items-center font-Poppins">
       <h1
@@ -14,6 +18,9 @@ function App() {
       </h1>
       <LoginPage />
       <Logout />
+      {/* <p>redux {count}</p>
+      <button onClick={() => dispatch(increment())}>tambah</button>
+      <button onClick={() => dispatch(decrement())}>kurang</button> */}
     </div>
   );
 }

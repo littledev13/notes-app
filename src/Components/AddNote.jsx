@@ -42,7 +42,13 @@ function AddNote() {
         <p className="text-sm text-slate-600">28/12/2023</p>
         <button
           className="p-1 rounded-full self-end justify-self-end hover:bg-emerald-500 hover:text-white duration-300"
-          onClick={writeDB}
+          onClick={() => {
+            writeDB({
+              add: {
+                satu: "satu",
+              },
+            });
+          }}
         >
           {svg}
         </button>
