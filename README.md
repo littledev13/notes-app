@@ -16,7 +16,7 @@ Aplikasi catatan
 
 ### Function
 
-+ Login
+- Login
 - Register
 - Fetch Login User To Firebase
 - Fetch Register User To Firebase
