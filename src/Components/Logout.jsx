@@ -1,4 +1,7 @@
+import { useDispatch } from "react-redux";
+import { logout } from "../Store/counter/counter";
 function Logout() {
+  const dispatch = useDispatch();
   const svg = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +20,12 @@ function Logout() {
   );
 
   return (
-    <div className="absolute bottom-4 right-7 scale-150 hover:text-white hover:bg-rose-500 p-1 rounded-lg">
+    <div
+      className="cursor-pointer absolute bottom-4 right-7 scale-150 hover:text-white hover:bg-rose-500 p-1 rounded-lg"
+      onClick={() => {
+        dispatch(logout());
+      }}
+    >
       {svg}
     </div>
   );

@@ -17,7 +17,7 @@ function Note() {
   );
 
   return (
-    <div className=" px-3 py-2  bg-rose-200 rounded shadow border flex-col flex justify-between">
+    <div className=" px-3 py-2 min-h-[230px] bg-rose-200 rounded shadow border flex-col flex justify-between">
       <div className="top">
         <p id="title-note" className="border-black border-b-2 font-bold">
           title note

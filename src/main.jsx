@@ -5,15 +5,30 @@ import App from "./App";
 import "./index.css";
 import store from "./store/store";
 import { Provider } from "react-redux";
-// import { app, writeDB } from "./config/firebase";
-
-// console.log("firebase : ", writeDB);
-// writeDB();
+import ErrorPage from "./Pages/ErrorPage";
+import Register from "./Components/Register";
+import Login from "./Components/Login";
+import NotesList from "./Pages/NotesList";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <Login />,
+      },
+      {
+        path: "regis",
+        element: <Register />,
+      },
+      {
+        path: "chats",
+        element: <NotesList />,
+      },
+    ],
   },
 ]);
 

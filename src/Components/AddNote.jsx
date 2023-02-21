@@ -1,6 +1,6 @@
 import React from "react";
 // import { CRUD } from "../config/CRUD";
-import { writeDB } from "../config/firebase";
+import { readDB, writeDB } from "../config/firebase";
 
 function AddNote() {
   const svg = (
@@ -23,7 +23,7 @@ function AddNote() {
   return (
     <div
       id=""
-      className="px-3 py-2  bg-rose-200 rounded shadow border flex-col  flex justify-between"
+      className="px-3 py-2  bg-rose-200 rounded shadow border flex-col  flex justify-between min-h-[230px]"
     >
       <div className="top  h-full">
         <input
@@ -42,13 +42,7 @@ function AddNote() {
         <p className="text-sm text-slate-600">28/12/2023</p>
         <button
           className="p-1 rounded-full self-end justify-self-end hover:bg-emerald-500 hover:text-white duration-300"
-          onClick={() => {
-            writeDB({
-              add: {
-                satu: "satu",
-              },
-            });
-          }}
+          onClick={readDB}
         >
           {svg}
         </button>

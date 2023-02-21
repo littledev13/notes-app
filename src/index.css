@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Itim&family=Poppins&display=swap");
+/*  */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,6 +12,7 @@
   /* border-radius: ; */
 }
 ::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background: #666;
 }
@@ -19,9 +21,8 @@
   background: #232323;
 }
 
-#notelist {
+#noteslist {
   display: grid;
   grid-template-columns: repeat(auto-fill, 250px);
-  grid-template-rows: repeat(auto-fill, 230px);
-  /* gap:px; */
+  grid-template-rows: repeat(auto-fill, min(230px));
 }
